@@ -42,9 +42,10 @@ Alternatively, you can use ZAPPA or SAM for the dependencies but personally, tha
 
 ### Inventory Sync
 Anchanto Webhook will be activated upon change in any inventory quantity, sending POST request to Shopify to update stock count.
+Anchanto uses SKU while Shopify uses ID. Shopify graphQL is used to obtain inventory ID from SKU number. 
 
 ### Fulfillment Update
-POST request will be sent to shopify updating order to **Fulfilled** upon processing status change webhook request from Anchanto end. 
+POST request will be sent to shopify updating order to **Fulfilled** upon status change = **complete** via webhook request from Anchanto end. 
 
 #### Disclaimer
 This is still in dev stage but they do work. Current challenges:
