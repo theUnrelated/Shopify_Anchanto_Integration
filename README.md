@@ -1,4 +1,4 @@
-hopify Anchanto Integration
+# Shopify Anchanto Integration
 Various management processes between shopify and anchanto warehouse management using REST API with Python, request package and flask or AWS. 
 
 ## Flask
