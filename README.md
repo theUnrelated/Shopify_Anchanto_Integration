@@ -30,6 +30,8 @@ from botocore.vendored import requests
 ```
 but I believe it is going to be deprecated in 2021. 
 
+Alternatively, you can use ZAPPA or SAM for the dependencies but personally, that would be much more complicated to the solution above. 
+
 ## Functions
 1. Order creation
 2. Inventory Sync
