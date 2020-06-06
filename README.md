@@ -1,6 +1,11 @@
 # Shopify Anchanto Integration
 Various management processes between shopify and anchanto warehouse management using REST API with Python, request package and flask or AWS. 
 
+## Functions
+1. Order creation
+2. Inventory Sync
+3. Fulfillment update
+
 ## Flask
 Flask deployment was tested via local host using [ngrok](https://ngrok.com/) and [beeceptor](https://beeceptor.com/). 
 
@@ -31,11 +36,6 @@ from botocore.vendored import requests
 but I believe it is going to be deprecated in 2021. 
 
 Alternatively, you can use ZAPPA or SAM for the dependencies but personally, that would be much more complicated to the solution above. 
-
-## Functions
-1. Order creation
-2. Inventory Sync
-3. Fulfillment update
 
 ### Order Creation
 [Shopify webhook](https://shopify.dev/tutorials/manage-webhooks) will be activated at new order creation sending POST request to Anchanto warehouse management. 
