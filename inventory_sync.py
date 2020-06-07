@@ -23,8 +23,8 @@ def stockSync(event, context):
     try:
       for p in event["products"]:
         query = """
-        query($sku: String){
-        productVariants(first: 1, query: $sku) {
+        query($SKU: String){
+        productVariants(first: 1, query: $SKU) {
           edges {
             node {
               product{ 
@@ -35,7 +35,7 @@ def stockSync(event, context):
         }
         }
         """
-        variables = {"sku":"sku:" + p["sku"]}
+        variables = {"SKU":"SKU:" + p["sku"]}
         request = requests.post('https://{}.myshopify.com/admin/api/2020-04/graphql.json'.format(shopify["hostname"]), json={'query': query, 'variables':variables}, headers=gqlheaders)
         # logger.info("Response" + str(request))
         # logger.info(request.json())
@@ -49,7 +49,7 @@ def stockSync(event, context):
         quantityUpdate = requests.put("https://{}:{}@{}.myshopify.com/admin/api/{}/products/{}.json".format(shopify["api_key"],shopify["password"],shopify["hostname"],shopify["version"],prodID), json=newData, headers=headers)
         logging.info("Quantity Updated" + p["sku"] + p["quantity"])
     except Exception as e:
-      logger.info("Exception" + str(e))
+      logger.info(f"Exception {e}")
       # server = smtplib.SMTP('smtp.mailgun.org', 587)
       # server.ehlo()
       # server.starttls()
