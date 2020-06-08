@@ -30,7 +30,7 @@ headers = {"Content-Type": "application/json"}
 def sync():
     # data = request.json
 
-    invAnchanto = requests.post("https://ewms.anchanto.com/fetch_stock", json=anchanto, headers=headers)
+    invAnchanto = requests.post("### ANCHANTO URL ###", json=anchanto, headers=headers)
     invShopify = requests.get("https://{}:{}@{}.myshopify.com/admin/api/{}/products.json".format(shopify["api_key"],shopify["password"],shopify["hostname"],shopify["version"]), headers=headers)
     exists = False
     for i in invAnchanto.json()["products"]:
