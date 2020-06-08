@@ -5,6 +5,7 @@ Various management processes between shopify and anchanto warehouse management u
 1. Order creation
 2. Inventory Sync
 3. Fulfillment update
+4. Full Sync
 
 ## Flask
 Flask deployment was tested via local host using [ngrok](https://ngrok.com/) and [beeceptor](https://beeceptor.com/). 
@@ -46,6 +47,9 @@ Anchanto uses SKU while Shopify uses ID. Shopify graphQL is used to obtain inven
 
 ### Fulfillment Update
 POST request will be sent to shopify updating order to **Fulfilled** upon status change = **complete** via webhook request from Anchanto end. 
+
+### Full Sync
+Full Sync function can be called which pulls inventory and syncs both inventory according to Anchanto's warehouse. 
 
 #### Disclaimer
 This is still in dev stage but they do work. Current challenges:
